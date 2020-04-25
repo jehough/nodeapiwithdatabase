@@ -6,4 +6,4 @@ router.get('/', function(req, res, next){
     res.json({"Find the Character": "Yoda"})
 })
 
-module.exports = router
+module.exports = router;

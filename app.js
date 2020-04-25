@@ -10,8 +10,8 @@ const charactersRouter = require('./routes/characters');
 const app = express();
 
 const mongoose = require('mongoose')
-const url = "mongodb+srv://dbUser:<hM7tA1kqwtPSzWxC>@cluster0-sndv9.mongodb.net/test?retryWrites=true&w=majority"
-mongoose.connect(url, { useNewUrlParser: true })
+const url = "mongodb://127.0.0.1:27017/characters"
+mongoose.connect(url , { useNewUrlParser: true })
 
 const db = mongoose.connection
 db.once('open', _=>{
