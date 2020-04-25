@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
@@ -11,6 +12,7 @@ const charactersRouter = require('./routes/characters');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true}))
+app.use(bodyParser.json())
 const mongoose = require('mongoose')
 const url = "mongodb://127.0.0.1:27017/characters"
 mongoose.connect(url , { useNewUrlParser: true })
