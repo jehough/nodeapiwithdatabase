@@ -14,8 +14,12 @@ router.get('/', function(req, res, next){
 })
 
 router.post('/', function(req, res, next){
-    console.log(req.name)
-    res.redirect('/')
+    function saveCharacter (character) {
+        const c = new Character(character)
+        return c.save()
+    }
+    saveCharacter(req.body)
+    res.redirect('/characters')
 })
 
 module.exports = router;
