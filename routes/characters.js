@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next){
-    res.json()
+    res.json({"Find the Character": "Yoda"})
 })
 
 module.exports = router
